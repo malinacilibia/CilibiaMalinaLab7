@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CilibiaMalinaLab7.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="fsega.jpg"
+                HeightRequest="200" 
+                WidthRequest="200" 
+                HorizontalOptions="Center"
+                Aspect="AspectFit"
+                SemanticProperties.Description="Imaginea mea" />
+
+            <Label
+                Text="Buna! Ma numesc Cilibia Malina si sunt studenta la FSEGA!"
+                FontSize="18"
+                FontAttributes="Bold"
+                TextColor="Pink"
+                HorizontalOptions="Center"/>
+
+            <Label
+               Text="Aceasta este pagina mea personalizata!"
+               FontSize="16"
+               TextColor="Pink"
+               HorizontalOptions="Center" 
+               VerticalOptions="Start"/>
+
+            <Button
+                x:Name="CounterBtn"
+                Text="Click me" 
+                SemanticProperties.Hint="Counts the number of times you click"
+                Clicked="OnCounterClicked"
+                HorizontalOptions="Fill" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
