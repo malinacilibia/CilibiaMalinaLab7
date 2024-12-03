@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentPage xmlns:local="clr-namespace:CilibiaMalinaLab7"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CilibiaMalinaLab7.ListPage"
              Title="ListPage">
@@ -8,7 +9,11 @@
 
         <Editor Placeholder="Enter the description of the shopping list"
                 Text="{Binding Description}"
-                HeightRequest="100" />
+                HeightRequest="50" >
+                <Editor.Behaviors>
+                 <local:ValidationBehaviour />
+                 </Editor.Behaviors>
+                 </Editor>
 
         <Grid>
             <Grid.ColumnDefinitions>
@@ -23,6 +28,20 @@
                     Text="Delete"
                     Clicked="OnDeleteButtonClicked" />
         </Grid>
+        <ListView x:Name="listView"
+                  Margin="20">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Detail="{Binding Description}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Add/Choose Item to buy"
+                MaximumWidthRequest="300"
+                Clicked="OnChooseButtonClicked"/>
+        <Button Text="Delete Item"
+            MaximumWidthRequest="300"
+            Clicked="OnDeleteItemButtonClicked" />
 
     </StackLayout>
 </ContentPage>
