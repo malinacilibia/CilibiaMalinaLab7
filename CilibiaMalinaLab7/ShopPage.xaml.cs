@@ -21,7 +21,7 @@ public partial class ShopPage : ContentPage
     {
         var shop = (Shop)BindingContext;
         var address = shop.Adress;
-        var locations = await Geocoding.GetLocationsAsync(address);
+        //var locations = await Geocoding.GetLocationsAsync(address);
 
         var options = new MapLaunchOptions
         { Name = "Magazinul meu preferat" };
@@ -29,7 +29,7 @@ public partial class ShopPage : ContentPage
            
          var myLocation = new Location(46.7731796289, 23.6213886738);
        
-        var distance = myLocation.CalculateDistance(location, DistanceUnits.Kilometers);
+        var distance = myLocation.CalculateDistance(shoplocation, DistanceUnits.Kilometers);
         if (distance < 5)
         {
             var request = new NotificationRequest
